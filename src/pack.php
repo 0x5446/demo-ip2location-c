@@ -1,7 +1,7 @@
 <?php
 
-define("TEXT", "ip.txt");
-define("DATA", "ip.dat");
+define("TEXT", $_SERVER['argv'][1]);
+define("DATA", $_SERVER['argv'][2]);
 
 unlink(DATA);
 
