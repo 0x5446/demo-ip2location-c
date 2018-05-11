@@ -5,11 +5,11 @@
 
 # 介绍
 - src/pack.php
-> 将文本ip.txt转化为二进制ip.data，每个ip段＋定长的地理信息为一个entry（72字节）
+> 将文本ip.txt转化为二进制ip.dat，每个ip段＋定长的地理信息为一个entry（72字节）
 - src/test.c
 > 测试文件打包是否正确
 - src/ip2location.c
-> 从二进制ip.data中查询特定IP，ip.dat是有序的连续分段，因此我们可以用二分查找的方式去找到给定IP所在的IP段，并查处对应地理信息
+> 从二进制ip.dat中查询特定IP，ip.dat是有序的连续分段，因此我们可以用二分查找的方式去找到给定IP所在的IP段，并查处对应地理信息
 
 
 # 编译和使用
