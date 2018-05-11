@@ -31,6 +31,7 @@ int int2ip(char *ipString, unsigned int ip) {
     c = (unsigned char)(ip >> 8 & 0x000000FF);
     d = (unsigned char)(ip & 0x000000FF);
     snprintf(ipString, 16, "%hhu.%hhu.%hhu.%hhu", a, b, c, d);
+    return 0;
 }
 
 int findIpLocation(char *location, char *ipstr, char *dataFile) {
@@ -58,6 +59,7 @@ int findIpLocation(char *location, char *ipstr, char *dataFile) {
             if ((index - l) == 1) {
                 index = l;
             } else if (index == l) {
+                close(fp);
                 return 1;   //查不到
             } else {
                 index = index - ( (index - l) / 2 );
@@ -68,6 +70,7 @@ int findIpLocation(char *location, char *ipstr, char *dataFile) {
             if ((r - index) == 1) {
                 index = r;
             } else if (r == index) {
+                close(fp);
                 return 2; //查不到
             } else {
                 index = index + ( (r - index) / 2 );
@@ -75,10 +78,10 @@ int findIpLocation(char *location, char *ipstr, char *dataFile) {
         } else {    //命中
             printf("index:%u, %s(%u) ~ %s(%u) HIT!\n", index, leftStr, left, rightStr, right);
             snprintf(location, LOCATION_SIZE, "%s", &buff[IPRANGE_SIZE]);
+            close(fp);
             return 0;
         }
     }
-    close(fp);
 }
 
 int main(size_t argc, char *argv[]) {
