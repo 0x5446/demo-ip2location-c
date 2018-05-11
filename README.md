@@ -1,7 +1,7 @@
 # ip2location algorithm, C implemented
 
-功能：查询给定IP的地理信息
-地址库来源：https://raw.githubusercontent.com/itbdw/ip-database/master/src/qqwry.dat
+- 功能：查询给定IP的地理信息
+- 地址库来源：https://raw.githubusercontent.com/itbdw/ip-database/master/src/qqwry.dat
 
 # 介绍
 - src/pack.php
